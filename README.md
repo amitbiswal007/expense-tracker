@@ -15,4 +15,5 @@ Concepts used in this project:
 7. LocalStorage
 
 
- 
+##Note: 
+This code base is not yet finished [Work in progress].
