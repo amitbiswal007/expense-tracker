@@ -5,7 +5,9 @@ It doesn't contain any backend, it uses browser's local storage to store the dat
 
 This app is created to practice Reactjs
 
-Concepts used in this project:
+
+## Concepts used in this project:
+
 1. Reactjs fundamentals
 2. Typescript usage
 3. useState()
@@ -15,5 +17,11 @@ Concepts used in this project:
 7. LocalStorage
 
 
-##Note: 
+## Note: 
 This code base is not yet finished [Work in progress].
+
+## Future TODOs (will be releasing slowly based on free time)
+- Add Delete functionality
+- Use CSS library like Tailwind or Bootstrap
+- Show a dashboard with total expenses
+- Add functionality to add 'Income' transaction types

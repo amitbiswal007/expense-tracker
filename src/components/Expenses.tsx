@@ -1,17 +1,8 @@
-import { useEffect, useState } from "react";
+interface ExpensesProps {
+    expenses: number[];
+}
 
-export default function Expenses() {
-
-
-    const [expenses, setExpenses] = useState([]);
-
-    useEffect(() => {
-        const expensesJSON = localStorage.getItem("expenses");
-        if (expensesJSON) {
-            setExpenses(JSON.parse(expensesJSON));
-            console.log("expenses from local storage", expensesJSON);
-        }
-    }, [])
+export default function Expenses({ expenses }: ExpensesProps) {
 
     return (
         <>
@@ -30,19 +21,22 @@ export default function Expenses() {
                         </th>
                     </tr></thead>
                 <tbody>
-                    <tr>
-                        <td>
-                            1
-                        </td>
-                        <td>
-                            Expense
-                        </td>
-                        <td>
-                            $100
-                        </td>
-                    </tr></tbody>
 
-                    {expenses}
+                    {expenses.map(expense => {
+                        return (
+                            <>
+                                <tr>
+                                    <td>{expenses.indexOf(expense) + 1}</td>
+                                    <td>Expense</td>
+                                    <td>${expense}</td>
+                                    <td>
+                                        <button>Delete</button>
+                                    </td>
+                                </tr>
+                            </>
+                        )
+                    })}
+                </tbody>
             </table>
         </>
     )

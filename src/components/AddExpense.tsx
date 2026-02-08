@@ -1,16 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
-export default function AddExpense(){
+interface AddExpenseProps {
+    onAddExpense: (amount: number) => void;
+}
+
+export default function AddExpense({ onAddExpense }: AddExpenseProps){
 
     const [amount,setAmount] = useState(0);
-   
 
     function submitExpenseHandler(e:React.FormEvent<HTMLFormElement>){
         e.preventDefault()
         console.log("submit btn clicked");
-
-        //TODO: Add to expenses array in local storage
-        //  
+        
+        if (amount > 0) {
+            onAddExpense(amount);
+            setAmount(0);
+        }
     }
 
     function changeHandler(e:React.ChangeEvent<HTMLInputElement>){
