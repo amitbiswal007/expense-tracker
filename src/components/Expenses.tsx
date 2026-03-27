@@ -19,6 +19,9 @@ export default function Expenses({ expenses }: ExpensesProps) {
                         <th>
                             Amount
                         </th>
+                        <th>
+                            Action
+                        </th>
                     </tr></thead>
                 <tbody>
 
@@ -30,6 +33,7 @@ export default function Expenses({ expenses }: ExpensesProps) {
                                     <td>Expense</td>
                                     <td>${expense}</td>
                                     <td>
+                                        <button>Edit</button>
                                         <button>Delete</button>
                                     </td>
                                 </tr>
